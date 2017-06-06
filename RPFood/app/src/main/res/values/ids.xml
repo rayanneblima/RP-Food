@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="spinner1" type="id" />
+    <item name="action_settings" type="id" />
+    <item name="action_perfil" type="id" />
+    <item name="acttion_logout" type="id" />
+    <item name="muitobom_rb" type="id" />
+</resources>

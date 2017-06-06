@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Tela1App">
+
+    <item
+        android:id="@+id/perfil_menu"
+        android:title="@string/perfil_menu"
+        android:showAsAction="ifRoom"
+        app:showAsAction="always"
+        android:icon="@drawable/com_facebook_profile_picture_blank_portrait" />
+    <item
+        android:id="@+id/contato_menu"
+        android:title="@string/sobre_app"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/sair_menu"
+        android:title="@string/sair_menu"
+        android:showAsAction="never" />
+
+</menu>

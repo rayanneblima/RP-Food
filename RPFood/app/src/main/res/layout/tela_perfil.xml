@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+
+    <ImageButton
+        android:id="@+id/imgPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imgPerfil"
+        app:srcCompat="@drawable/com_facebook_profile_picture_blank_square"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="33dp" />
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="282dp"
+        tools:text="@string/edtName" />
+
+    <EditText
+        android:id="@+id/edtMatricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Matrícula"
+        android:inputType="number"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="334dp"
+        tools:text="@string/edtMatricula" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="389dp"
+        tools:text="@string/edtEmail" />
+
+    <EditText
+        android:id="@+id/edtSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="442dp"
+        tools:text="@string/edtPass" />
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="44dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="350dp"
+        android:background="@drawable/back"
+        tools:text="@string/btnVoltar" />
+
+    <Button
+        android:id="@+id/btnSalvar"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="503dp"
+        tools:text="@string/btnSalvar" />
+
+</android.support.constraint.ConstraintLayout>
+

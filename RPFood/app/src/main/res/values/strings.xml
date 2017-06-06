@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">RP Food</string>
+    <string name="facebook_app_id">2293136407577154</string>
+    <string name="fb_login_protocol_scheme">fb2293136407577154</string>
+
+    Mensagens:
+    <string name="cancel_login">Operação cancelada.</string>
+    <string name="error_login">Erro ao logar.</string>
+    <string name="logout">Deslogado com sucesso.</string>
+    <string name="bem_vindo">Seja Bem-Vindo!</string>
+    <string name="suc_cadastro">Cadastrado com sucesso.</string>
+
+    Tela Login:
+    <string name="edtUser">E-mail / Matrícula</string>
+    <string name="edtPass">Senha</string>
+    <string name="entrarButton">ENTRAR</string>
+    <string name="btnCadastrar">Cadastre-se</string>
+    <string name="msg1">Ainda não possui uma conta? </string>
+
+
+    Página de Cadastro:
+    <string name="msg2">Registre-se:</string>
+    <string name="edtName">Nome de exibição</string>
+    <string name="edtMatricula">Matrícula</string>
+    <string name="edtEmail">E-mail</string>
+    <string name="edtSenha">Senha</string>
+    <string name="buttonCadastro">Cadastrar</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="msg3">Já possui uma conta? </string>
+
+
+    Tela Perfil:
+    <string name="btnVoltar"></string>
+    <string name="btnSalvar">Salvar</string>
+    <string name="imgPerfil"></string>
+    <string name="salvo_suc">Salvo com sucesso!</string>
+
+
+    <string name="buttonVoltar"></string>
+    <string name="buttonFoto">escolha uma foto</string>
+    <string name="btnCardapio">Cardápio</string>
+    <string name="action_perfil">Perfil</string>
+    <string name="action_logout">Sair</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="local_id">Rio Pomba - MG </string>
+    <string name="sobre_app">Sobre o App</string>
+    <string name="perfil_menu">Perfil</string>
+    <string name="sair_menu">Sair</string>
+    <string name="ifButton" />
+    <string name="cardapioBtn">Cardápio hoje</string>
+
+
+    Sobre o app:
+    <string name="telefone">(32)99818-7070</string>
+
+
+    />
+
+
+</resources>

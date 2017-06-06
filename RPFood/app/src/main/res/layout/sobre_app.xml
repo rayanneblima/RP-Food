@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="Desenvolvido por:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+            android:id="@+id/textView"
+            android:textStyle="normal|bold"
+            android:textSize="30sp"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rayanne Bertolace Lima"
+            android:id="@+id/textView2"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/textView"
+            android:textAlignment="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="25sp"
+            android:layout_weight="1" />
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contato:"
+        android:id="@+id/textView3"
+        android:layout_marginTop="23dp"
+        android:textStyle="normal|bold"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCel"
+            android:layout_weight="0.30"
+            android:textStyle="normal|bold"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/telefone" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="0.28"
+            android:layout_height="70dp"
+            android:layout_width="200dp"
+            android:layout_marginLeft="90dp"
+            tools:ignore="RtlHardcoded">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnFb"
+                android:layout_weight="1"
+                android:background="@drawable/fb" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnCel"
+                android:layout_weight="1"
+                android:background="@drawable/wpp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnGmail"
+                android:layout_weight="1"
+                android:background="@drawable/email" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
