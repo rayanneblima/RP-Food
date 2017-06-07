@@ -26,7 +26,8 @@
         android:orientation="vertical"
         android:layout_below="@+id/tb_telaif"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -429,37 +430,15 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonCardapio"
-        android:layout_below="@+id/voltarButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/colorPrimary"
-        android:text="Cardápio" />
-
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/txtRP"
-        android:text="@string/ifButton"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:layout_above="@+id/buttonCardapio"
-        android:layout_alignRight="@+id/button7"
-        android:layout_alignEnd="@+id/button7" />
-
-    <Button
-        android:text="Avaliar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button7"
-        android:layout_below="@+id/txtRP"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@color/colorPrimary" />
+        android:layout_below="@+id/voltarButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="@string/ifButton"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
 
 </RelativeLayout>

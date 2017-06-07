@@ -12,22 +12,48 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.facebook.login.LoginManager;
 
-import java.lang.reflect.Array;
+import com.example.rayanne.rp_food.R;
+import com.example.rayanne.rp_food.AppController;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.ProgressDialog;
+import android.util.Log;
+
+import android.widget.TextView;
+
+import com.android.volley.Request.Method;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
 
 public class Tela1App extends AppCompatActivity {
 
-    private Spinner sp;
-    private String[] RestaurantesNome = new String[]{"Restaurante Universitário - IF RP", "Restaurante João e Maria",
-            "Restaurante Riopombense"};
+    // URL JSON ARRAY
+    private String urlJsonArry = "https://riopombafood.000webhostapp.com/select.php";
 
+    private static String TAG = Tela1App.class.getSimpleName();
+    private Button btnMakeArrayRequest;
+
+    // Dialog
+    private ProgressDialog pDialog;
+    private TextView txtResponse;
+
+    // String temporária
+    private String jsonResponse;
+
+
+    RatingBar ratingBar;
+    private Spinner sp;
+    private String[] RestaurantesNome = new String[]{"Restaurante Universitário - IF RP"};
 
 
     @Override
@@ -35,6 +61,23 @@ public class Tela1App extends AppCompatActivity {
         //iniciar a tela
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela1);
+
+        //JSON
+        btnMakeArrayRequest = (Button) findViewById(R.id.btnArrayRequest);
+        txtResponse = (TextView) findViewById(R.id.txtResponse);
+
+        pDialog = new ProgressDialog(this);
+        pDialog.setMessage("Aguarde...");
+        pDialog.setCancelable(false);
+
+        btnMakeArrayRequest.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //json array request
+                makeJsonArrayRequest();
+            }
+        });
 
         //criação da toolbar
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -60,6 +103,19 @@ public class Tela1App extends AppCompatActivity {
         });
 
 
+        //rating bar
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                Intent intent = new Intent();
+                intent.setClass(Tela1App.this, Opiniao.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
         //botão Cardápio
         Button Cardapiobtn = (Button) findViewById(R.id.cardapiobtn);
 
@@ -69,9 +125,7 @@ public class Tela1App extends AppCompatActivity {
 
                 Intent intent = new Intent();
                 intent.setClass(Tela1App.this, TelaIF.class);
-
                 startActivity(intent);
-
                 finish();
             }
         });
@@ -94,9 +148,9 @@ public class Tela1App extends AppCompatActivity {
 
         //criar tela perfil
         if (id == R.id.perfil_menu){
+            startActivity(new Intent(Tela1App.this, Perfil.class));
             return true;
         }
-
 
         //pop up
         if (id == R.id.contato_menu){
@@ -107,9 +161,9 @@ public class Tela1App extends AppCompatActivity {
 
 
         if (id == R.id.sair_menu){
-            Context contexto = getApplicationContext();
             LoginManager.getInstance().logOut();
             goLoginScreen();
+            Context contexto = getApplicationContext();
             String texto = "Deslogado com sucesso.";
             int duracao = Toast.LENGTH_SHORT;
 
@@ -120,12 +174,6 @@ public class Tela1App extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
-
-
 
     private void goLoginScreen() {
         Intent intent = new Intent(this, TelaLogin.class);
@@ -138,4 +186,77 @@ public class Tela1App extends AppCompatActivity {
         goLoginScreen();
     }
 
+
+    /**
+     * JSON ARRAY [
+     * */
+    private void makeJsonArrayRequest() {
+        showpDialog();
+
+        JsonArrayRequest req = new JsonArrayRequest(urlJsonArry,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.d(TAG, response.toString());
+
+                        try {
+                            jsonResponse = "";
+                            for (int i = 0; i < response.length(); i++) {
+
+                                JSONObject person = (JSONObject) response
+                                        .get(i);
+
+                                String salada1 = person.getString("salada1");
+                                String salada2 = person.getString("salada2");
+                                String prato_principal = person.getString("prato_principal");
+                                String guarnicao = person.getString("guarnicao");
+                                String suco = person.getString("suco");
+                                String sobremesa = person.getString("sobremesa");
+                                String data = person.getString("data");
+
+                                jsonResponse +=  data + "\n\n";
+                                jsonResponse += "Salada 1: " + salada1 + "\n\n";
+                                jsonResponse += "\t  2: " + salada2 + "\n\n";
+                                jsonResponse += "Prato Principal: " + prato_principal + "\n\n";
+                                jsonResponse += "Guarnição: " + guarnicao + "\n\n";
+                                jsonResponse += "Suco: " + suco + "\n\n";
+                                jsonResponse += "Sobremesa: " + sobremesa + "\n\n";
+
+                            }
+
+                            txtResponse.setText(jsonResponse);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(),
+                                    "Erro: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+
+                        hidepDialog();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Erro: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_SHORT).show();
+                hidepDialog();
+            }
+        });
+
+        // Adiciona request ao request queue
+        AppController.getInstance().addToRequestQueue(req);
+
+    }
+
+    private void showpDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hidepDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
 }

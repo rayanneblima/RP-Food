@@ -3,12 +3,17 @@
     <string name="facebook_app_id">2293136407577154</string>
     <string name="fb_login_protocol_scheme">fb2293136407577154</string>
 
+
     Mensagens:
     <string name="cancel_login">Operação cancelada.</string>
     <string name="error_login">Erro ao logar.</string>
     <string name="logout">Deslogado com sucesso.</string>
     <string name="bem_vindo">Seja Bem-Vindo!</string>
     <string name="suc_cadastro">Cadastrado com sucesso.</string>
+    ***OLHAR ONDE TÁ:
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
     Tela Login:
     <string name="edtUser">E-mail / Matrícula</string>
@@ -28,37 +33,45 @@
     <string name="btnEntrar">Entrar</string>
     <string name="msg3">Já possui uma conta? </string>
 
+    Tela 1:
+    <string name="cardapioBtn">Cardápio Semanal</string>
+    <string name="btnAvaliar">Avaliar</string>
 
     Tela Perfil:
-    <string name="btnVoltar"></string>
     <string name="btnSalvar">Salvar</string>
-    <string name="imgPerfil"></string>
+    <string name="btnVoltar"></string>
     <string name="salvo_suc">Salvo com sucesso!</string>
 
 
-    <string name="buttonVoltar"></string>
-    <string name="buttonFoto">escolha uma foto</string>
-    <string name="btnCardapio">Cardápio</string>
-    <string name="action_perfil">Perfil</string>
-    <string name="action_logout">Sair</string>
+    PopUp Avaliação:
+    <string name="op_enviada">Sua opinião foi enviada. Obrigada!</string>
+    <string name="txtTint">Qual o motivo da sua nota?</string>
+    <string name="cbSal1">Salada 1</string>
+    <string name="cbSal2">Salada 2</string>
+    <string name="cbPrinc">Prato Principal</string>
+    <string name="cbGuarn">Guarnição</string>
+    <string name="cbSuco">Suco</string>
+    <string name="cbSobremesa">Sobremesa</string>
+    <string name="cbNada">Não opinar</string>
+    <string name="btnEnviar">Enviar</string>
 
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="local_id">Rio Pomba - MG </string>
+
+
+
+    Tela IF:
+    <string name="ifButton">Restaurante Universitário IF - Rio Pomba</string>
+
+
+    Menu:
     <string name="sobre_app">Sobre o App</string>
     <string name="perfil_menu">Perfil</string>
     <string name="sair_menu">Sair</string>
-    <string name="ifButton" />
-    <string name="cardapioBtn">Cardápio hoje</string>
 
 
     Sobre o app:
     <string name="telefone">(32)99818-7070</string>
-
-
-    />
 
 
 </resources>

@@ -52,7 +52,6 @@ public class PopUpTela1 extends Activity {
             public void onClick(View v) {
                 String telefone = txtCel.getText().toString();
                 Uri uri = Uri.parse("tel:"+telefone);
-
                 Intent intent = new Intent(Intent.ACTION_DIAL, uri);
                 startActivity(intent);
             }

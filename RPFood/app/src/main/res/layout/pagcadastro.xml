@@ -40,7 +40,7 @@
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
             android:inputType="text"
-            android:id="@+id/edtNome" />
+            android:id="@+id/edtName" />
 
         <EditText
             android:layout_width="match_parent"

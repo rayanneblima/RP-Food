@@ -1,48 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffffff">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:weightSum="1"
+    android:background="@drawable/login_background"
+    tools:context="${relativePackage}.${activityClass}">
 
         <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:background="?attr/colorPrimary"
-            android:theme="?attr/actionBarTheme"
-            android:minHeight="?attr/actionBarSize"
             android:id="@+id/toolbar"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner"
             android:layout_width="match_parent"
-            android:layout_below="@+id/toolbar"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <Button
-            android:text="Cardápio"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnArrayRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="CARDAPIO HOJE"
+        android:layout_below="@+id/spinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/txtResponse"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_above="@+id/ratingBar"
+        android:layout_below="@+id/btnArrayRequest" />
+
+    <Button
             android:id="@+id/cardapiobtn"
-            android:background="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cardapioBtn"
             android:textAlignment="center"
-            tools:text="@string/cardapioBtn"
-            android:layout_marginLeft="125dp"
-            android:layout_marginStart="125dp"
-            android:layout_marginBottom="121dp"
+            android:visibility="visible"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <Button
+            android:id="@+id/btnAvaliar"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnAvaliar"
+            android:textAlignment="center"
+            android:visibility="visible"
+            android:layout_above="@+id/cardapiobtn"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/muitoruim"
+            android:layout_above="@+id/btnAvaliar"
+            android:layout_toLeftOf="@+id/ratingBar"
+            android:layout_toStartOf="@+id/ratingBar" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnAvaliar"
+            android:layout_centerHorizontal="true"
+            android:numStars="5"
+            android:stepSize="1" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/muitobom"
+            android:layout_marginRight="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_above="@+id/btnAvaliar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
+
 
 
